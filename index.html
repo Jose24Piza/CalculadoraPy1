@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalculadoraPy - CD Tests</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧮 CalculadoraPy</h1>
+            <p class="subtitle">Continuous Integration & Deployment</p>
+            <p style="font-size: 0.9em; color: #666;">
+                🚀 Desplegado automáticamente desde GitHub Actions
+            </p>
+        </header>
+        
+        <div class="build-status" id="buildStatus">
+            ⏳ Cargando estado del build...
+        </div>
+        
+        <div class="alert" id="alertMessage">
+            🔄 Conectando con GitHub Actions...
+        </div>
+        
+        <div class="build-info">
+            <div class="build-info-item">
+                <strong>📦 Build #:</strong> 
+                <span id="buildNumber">Cargando...</span>
+            </div>
+            <div class="build-info-item">
+                <strong>🕐 Última actualización:</strong> 
+                <span id="timestamp">Cargando...</span>
+            </div>
+            <div class="build-info-item">
+                <strong>📊 Estado:</strong> 
+                <span id="buildStatusText">⏳ Pendiente</span>
+            </div>
+            <div class="build-info-item">
+                <strong>🌐 GitHub Pages:</strong> 
+                <span style="color: #28a745;">✅ Activo</span>
+            </div>
+            <div class="build-info-item">
+                <strong>🔗 Commit:</strong> 
+                <span id="commitHash" style="font-family: monospace;">Cargando...</span>
+            </div>
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-label" id="progressLabel">0%</span>
+        </div>
+        
+        <div class="test-status">
+            <h2>🧪 Resultados de Tests</h2>
+            
+            <div class="test-item pending" id="testSuma">
+                <div class="test-info">
+                    <span class="status-icon">⏳</span>
+                    <span class="test-name">Test de suma (2 + 3 = 5)</span>
+                </div>
+                <span class="badge pending">PENDING</span>
+            </div>
+            
+            <div class="test-item pending" id="testResta">
+                <div class="test-info">
+                    <span class="status-icon">⏳</span>
+                    <span class="test-name">Test de resta (10 - 5 = 5)</span>
+                </div>
+                <span class="badge pending">PENDING</span>
+            </div>
+            
+            <div class="test-item pending" id="testMultiplicacion">
+                <div class="test-info">
+                    <span class="status-icon">⏳</span>
+                    <span class="test-name">Test de multiplicación (3 × 4 = 12)</span>
+                </div>
+                <span class="badge pending">PENDING</span>
+            </div>
+            
+            <div class="test-item pending" id="testDivision">
+                <div class="test-info">
+                    <span class="status-icon">⏳</span>
+                    <span class="test-name">Test de división (10 ÷ 2 = 5)</span>
+                </div>
+                <span class="badge pending">PENDING</span>
+            </div>
+            
+            <div class="test-item pending" id="testDivisionCero">
+                <div class="test-info">
+                    <span class="status-icon">⏳</span>
+                    <span class="test-name">Test división por cero (debe lanzar error)</span>
+                </div>
+                <span class="badge pending">PENDING</span>
+            </div>
+            
+            <div class="test-item pending" id="testIntegracion">
+                <div class="test-info">
+                    <span class="status-icon">⏳</span>
+                    <span class="test-name">Test de integración app.py</span>
+                </div>
+                <span class="badge pending">PENDING</span>
+            </div>
+        </div>
+        
+        <div style="background: #e9ecef; padding: 15px; border-radius: 8px; margin: 15px 0;">
+            <h3 style="color: #333; margin-bottom: 10px;">⚙️ Información del CI/CD</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.9em;">
+                <div><strong>Pipeline:</strong> GitHub Actions</div>
+                <div><strong>Deploy:</strong> Automático</div>
+                <div><strong>Tests:</strong> Unitarios + Integración</div>
+                <div><strong>CD:</strong> GitHub Pages</div>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <button class="button" onclick="window.location.reload()">🔄 Actualizar</button>
+            <a href="https://github.com/Jose24Piza/CalculadoraPy/actions" target="_blank" class="button">📊 Ver GitHub Actions</a>
+            <a href="https://github.com/Jose24Piza/CalculadoraPy" target="_blank" class="button">📁 Ver Repositorio</a>
+        </div>
+        
+        <footer class="timestamp">
+            <span>📌 Página generada: <span id="loadTime"></span></span>
+            <br>
+            <span style="font-size: 0.8em; color: #bbb;">
+                CI/CD Pipeline | GitHub Actions → GitHub Pages
+            </span>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
